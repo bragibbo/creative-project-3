@@ -1,16 +1,16 @@
 <template>
   <div class="students">
     <h2>Students</h2>
-    <StudentTable :students="data"/>
+    <TestTable :students="data"/>
   </div>
 </template>
 
 <script>
-import StudentTable from "../StudentTable.vue"
+import TestTable from "../TestTable.vue"
 export default {
   name: 'Students',
   components: {
-    StudentTable
+    TestTable
   },
   data() {
    return {

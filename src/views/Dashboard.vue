@@ -6,7 +6,7 @@
       <router-link class="links text-left w-100" to='/students'>Students</router-link>
     </div>
     <div class="content">
-      <div class="content-body mt-2">
+      <div class="content-body mt-2 px-2 py-2">
         <router-view/>
       </div>
       <div class="content-footer">
