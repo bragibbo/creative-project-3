@@ -1,4 +1,4 @@
-[{
+let mock = [{
     "id": 1,
     "first_name": "Cirilo",
     "last_name": "Suff",
@@ -178,4 +178,7 @@
     "gender": "Male",
     "invoice_due": "4/1/2021",
     "student-since": "12/24/2020"
-  }]
+  }
+]
+
+export default mock;

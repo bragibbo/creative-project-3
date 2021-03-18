@@ -1,12 +1,13 @@
 <template>
   <div class="dashboard">
+    <!-- <div class="sidebar-bg"/> -->
     <div class="sidebar d-flex flex-column align-items-start">
       <router-link class="links text-left w-100" to='/' exact>Home</router-link>
       <router-link class="links text-left w-100" to='/students'>Students</router-link>
     </div>
     <div class="content">
-      <div class="content-body">
-      <router-view/>
+      <div class="content-body mt-2">
+        <router-view/>
       </div>
       <div class="content-footer">
         <p>Created by Brayden Gibbons and Nathan Sirrine. View the code for this project on <a href="https://github.com/bragibbo/creative-project-3">Github</a>.</p>
@@ -36,12 +37,23 @@ export default {
 .dashboard {
   display: flex;
   flex-direction: row;
-  height: 100%;
+  min-height: 100%;
+}
+
+.sidebar-bg {
+  background:  var(--primaryBlue);
+  position: absolute;
+  float: left;
+  display: block;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  width: 175px;
 }
 
 .sidebar {
+  background:  var(--primaryBlue);
   width: 200px;
-  background: var(--primaryBlue);
 }
 
 .links {
@@ -57,6 +69,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  min-height: 100%;
   width: 100%;
 }
 

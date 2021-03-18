@@ -1,14 +1,16 @@
 <template>
   <div class="students">
-    <h2 class="mt-2">Students</h2>
-    <p>{{students}}</p>
+    <h2>Students</h2>
+    <StudentTable :students="data"/>
   </div>
 </template>
 
 <script>
+import StudentTable from "../StudentTable.vue"
 export default {
   name: 'Students',
   components: {
+    StudentTable
   },
   data() {
    return {
@@ -16,8 +18,7 @@ export default {
    }
   },
   computed: {
-    Data() {
-      console.log(this.students)
+    data() {
       return this.$root.$data.students;
     }
   }
@@ -25,8 +26,6 @@ export default {
 </script>
 
 <style scoped>
-.students {
-  
-}
+
 
 </style>

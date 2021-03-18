@@ -23,7 +23,6 @@ export default {
 
 <style>
 #app {
-  min-height: 100%;
   height: 100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
