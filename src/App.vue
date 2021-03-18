@@ -34,19 +34,12 @@ export default {
 
 .content {
   height: 100%;
-  min-height: 100%;
-  padding-bottom: -60px;
-}
-
-.footer {
-  margin-top: -60px;
-  height: 50px;
-  background: #2c3e50;
 }
 
 .nav {
-  background: red;
+  background: var(--secondaryBlue);
   padding: 30px;
+  box-shadow: 0px 1px 10px;
 }
 
 .nav a {

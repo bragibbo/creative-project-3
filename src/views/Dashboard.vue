@@ -1,11 +1,16 @@
 <template>
   <div class="dashboard">
-    <div class="sidebar">
-      <router-link class="links" to='/'>Home</router-link>
-      <router-link class="links" to='/students'>Students</router-link>
+    <div class="sidebar d-flex flex-column align-items-start">
+      <router-link class="links text-left w-100" to='/' exact>Home</router-link>
+      <router-link class="links text-left w-100" to='/students'>Students</router-link>
     </div>
-    <div class="sidebar-content">
+    <div class="content">
+      <div class="content-body">
       <router-view/>
+      </div>
+      <div class="content-footer">
+        <p>Created by Brayden Gibbons and Nathan Sirrine. View the code for this project on <a href="https://github.com/bragibbo/creative-project-3">Github</a>.</p>
+      </div>
     </div>
   </div>
 </template>
@@ -24,6 +29,10 @@ export default {
 </script>
 
 <style scoped>
+.router-link-active {
+  background: var(--primaryGreen);
+}
+
 .dashboard {
   display: flex;
   flex-direction: row;
@@ -31,17 +40,33 @@ export default {
 }
 
 .sidebar {
-  width: 150px;
-  background: lightgrey;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  width: 200px;
+  background: var(--primaryBlue);
 }
 
 .links {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.content-footer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-top: 1px solid gray;
+  font-size: .75em;
+  align-items: flex-start;
 }
 </style>

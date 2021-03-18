@@ -1,11 +1,6 @@
 <template>
   <div class="home">
-    <div class="home-content">
-      <p>Hello this is where things are goin</p>
-    </div>
-    <div class="home-footer">
-
-    </div>
+    <p>Hello this is where things are goin</p>
   </div>
 </template>
 
@@ -18,8 +13,5 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  display: flex;
-  flex-direction: column;
-}
+
 </style>
