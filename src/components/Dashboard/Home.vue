@@ -1,17 +1,17 @@
 <template>
   <div class="home">
     <h2>Home</h2>
-    <!-- <Schedule/> -->
+    <Schedule/>
   </div>
 </template>
 
 <script>
-// import Schedule from '../Schedule.vue'
+import Schedule from '../Schedule.vue'
 
 export default {
   name: 'Home',
   components: {
-    // Schedule
+    Schedule
   }
 }
 </script>
