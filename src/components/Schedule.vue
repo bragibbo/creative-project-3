@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="index in this.totalCalendarHours" :key="index">
+    <div v-for="index in totalCalendarHours" :key="index">
       <div>{{this.startTime + index}}</div>
     </div>
     <div>
@@ -10,35 +10,32 @@
 </template>
 
 <script>
-// import Vue from 'vue'
+// export default{
+//   name: 'Schedule',
+//   components: {
 
-export default{
-  name: 'Schedule',
-  components: {
+//   },
+//   data() {
+//     return {
+//       days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+//       calendar: [],
+//       startTime: 6,
+//       endTime: 18,
+//       schedule: null,
+//       totalCalendarHours: null
+//     }
+//   },
+//   created() {
+//     const date = new Date ()
+//     this.schedule ={
+//       date: date,
+//       dayOfMonth: date.getDate(),
+//       dayOfWeek: date.getDay()
+//     }
 
-  },
-  data: () => {
-    return {
-      days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      calendar: [],
-      startTime: 6,
-      endTime: 18
-    }
-  },
-  computed: {
-    schedule () {
-      const date = new Date()
-      return {
-        date: date,
-        dayOfMonth: date.getDate(),
-        dayOfWeek: date.getDay()
-      }
-    },
-    totalCalendarHours() {
-      return this.data.endTime - this.data.startTime
-    }
-  }
-}
+//     this.totalCalendarHours = this.endTime - this.startTime
+//   }
+// }
 </script>
 
 <style scoped>
