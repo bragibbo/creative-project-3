@@ -1,5 +1,23 @@
 <template>
 <div class="wrapper">
+  <div class="grid-container">
+      <div class="grid-item header">
+        Name
+      </div>
+      <div class="grid-item header">
+        Gender
+      </div>
+      <div class="grid-item header">
+        Email
+      </div>
+      <div class="grid-item header">
+        Student Since
+      </div>
+      <div class="grid-item header">
+        Billing Price
+      </div>
+
+    </div>
   <div class="student-table"   v-for="student in students" :key="student.id">
     <div class="grid-container">
       <div class="grid-item">
@@ -18,7 +36,7 @@
         {{student.billing_price}}
       </div>
       <div class="grid-item remove">
-        <button class="auto btn btn-outline-danger btn-sm" @click='removeStudent(student)'>Delete Student</button>
+        <button class="btn btn-outline-danger btn-sm" @click='removeStudent(student)'>Delete Student</button>
       </div>
     </div>
   </div>
@@ -70,6 +88,12 @@ export default {
 
     .btn {
       font-size: .5rem;
+    }
+
+    .header {
+      font-weight: 600;
+      font-size: .8rem;
+      margin-bottom: .2rem;
     }
 
 </style>
