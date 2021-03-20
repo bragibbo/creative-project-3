@@ -4,6 +4,7 @@ import router from './router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import vSelect from 'vue-select'
 import mock from './mock-data'
+import mockSchedule from './mock-schedule'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -16,6 +17,7 @@ Vue.component('v-select', vSelect)
 Vue.config.productionTip = false
 
 let data = {
+  schedule: mockSchedule,
   students: mock,
   remove(student) {
     this.students = this.students.filter(currStudent => currStudent.id != student.id);

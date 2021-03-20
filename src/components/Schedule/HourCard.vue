@@ -4,10 +4,10 @@
     <div class="grid-item">
       <div class="d-flex flex-column w-100">
         <div class="grid-container-names my-2" v-for="(item, index) in hourData.appointments" :key="index">
-            <div class="d-flex flex-column align-items-start">{{item.firstName}} {{item.lastName}}</div>
-            <div class="delete-button grid-items">
-              <button class="btn btn-outline-danger" @click="(index) => submit(item)">X</button>
-            </div>
+          <div class="d-flex flex-column align-items-start">{{item.firstName}} {{item.lastName}}</div>
+          <div class="delete-button grid-items">
+            <button class="btn btn-outline-danger" @click="(index) => submit(item)">X</button>
+          </div>
         </div>
       </div>
     </div>

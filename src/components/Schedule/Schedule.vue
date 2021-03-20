@@ -48,6 +48,11 @@ export default{
         appointments: []
       })
     }
+
+    const schedule = this.$root.$data.schedule
+    for(let i=0; i < schedule.length; i++) {
+      this.schedule[schedule[i].hour].appointments.push(schedule[i])
+    }
   },
   methods: {
     addToSchedule(e) {
