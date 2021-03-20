@@ -39,3 +39,17 @@ body, html {
   }
 }
 
+.btn-primary {
+  background-color: var(--primaryGreen) !important;
+  border-color: var(--primaryGreen) !important;
+}
+
+.btn-outline-primary {
+  color: var(--primaryGreen) !important;
+  border-color: var(--primaryGreen) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--secondaryBlue) !important;
+  color: white !important;
+}

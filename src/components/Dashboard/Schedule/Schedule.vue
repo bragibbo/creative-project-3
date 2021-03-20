@@ -16,7 +16,7 @@
 <script>
 import moment from 'moment'
 import ScheduleAdd from './ScheduleAdd'
-import HourCard from './HourCard'
+import HourCard from './ScheduleHourCard'
 
 export default{
   name: 'Schedule',

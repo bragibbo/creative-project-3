@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import StudentTable from "../StudentTable.vue"
+import StudentTable from "./Students/StudentTable.vue"
 export default {
   name: 'Students',
   components: {

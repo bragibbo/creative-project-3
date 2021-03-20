@@ -13,7 +13,7 @@
     <v-select class='dropdown' v-model="gender" :options="genderOptions" placeholder="Gender"/>
     <v-select class='dropdown' v-model="lessonLength" :options="lessonLengthOptions" placeholder="Lesson Length"/>
 
-    <button class="submit-button" type="submit">Submit</button>
+    <button class="submit-button btn btn-outline-primary" type="submit">Submit</button>
   </form>
   <div v-else>
     <p>Student successfully added!</p>

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Schedule from '../Schedule/Schedule.vue'
+import Schedule from './Schedule/Schedule.vue'
 
 export default {
   name: 'Home',

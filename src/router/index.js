@@ -2,8 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../components/Dashboard/Home.vue'
 import Students from '../components/Dashboard/Students.vue'
-import CreateStudent from '../components/Dashboard/CreateStudent'
-import EditStudent from '../components/Dashboard/EditStudent'
+import CreateStudent from '../components/Dashboard/Students/CreateStudent'
+import EditStudent from '../components/Dashboard/Students/EditStudent'
 
 Vue.use(VueRouter)
 
