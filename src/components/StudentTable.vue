@@ -3,19 +3,22 @@
   <div class="student-table"   v-for="student in students" :key="student.id">
     <div class="grid-container">
       <div class="grid-item">
-        <p>{{student.last_name}}, {{student.first_name}}</p>
+        {{student.last_name}}, {{student.first_name}}
       </div>
       <div class="grid-item">
-        <p>{{student.gender}}</p>
+        {{student.gender}}
       </div>
       <div class="grid-item">
-        <p>{{student.email}}</p>
+        {{student.email}}
       </div>
       <div class="grid-item">
-        <p>{{student.student_since}}</p>
+        {{student.student_since}}
       </div>
       <div class="grid-item">
-        <p>{{student.billing_price}}</p>
+        {{student.billing_price}}
+      </div>
+      <div class="grid-item remove">
+        <button class="auto btn btn-outline-danger btn-sm" @click='removeStudent(student)'>Delete Student</button>
       </div>
     </div>
   </div>
@@ -28,6 +31,11 @@ export default {
   props: {
     students: Array
   },
+  methods: {
+    removeStudent(student) {
+      this.$root.$data.remove(student);
+    }
+  }
 }
 </script>
 
@@ -37,13 +45,31 @@ export default {
     }
     .grid-container {
       display: grid;
-      border: 1px solid green;
-      grid-template-columns: 2fr .25fr 3fr 1fr 1fr;
+
+      border-bottom: 1px solid black;
+      grid-template-columns: 2fr .25fr 3fr 1fr 1fr .75fr;
       grid-column-gap: 20px;
+            vertical-align: center;
+
       
     }
 
     .grid-item {
-      border: 1px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
+    .wrapper {
+      margin-bottom: 20px;
+    }
+
+    .remove-button {
+      background-color: rgb(168, 98, 98);
+    }
+
+    .btn {
+      font-size: .5rem;
+    }
+
 </style>

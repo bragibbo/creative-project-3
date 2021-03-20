@@ -1,24 +1,24 @@
 <template>
   <div class="students">
-    <h2>Students</h2>
-    <TestTable :students="data"/>
-  </div>
+    <h1 class="page-title">Students</h1>
+    <StudentTable :students="studentData"/>
+ </div>
 </template>
 
 <script>
-import TestTable from "../TestTable.vue"
+import StudentTable from "../StudentTable.vue"
 export default {
   name: 'Students',
   components: {
-    TestTable
+    StudentTable
   },
   data() {
    return {
-     students: this.$root.$data.students
+     
    }
   },
   computed: {
-    data() {
+    studentData() {
       return this.$root.$data.students;
     }
   }

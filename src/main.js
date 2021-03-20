@@ -17,6 +17,9 @@ Vue.config.productionTip = false
 
 let data = {
   students: mock,
+  remove(student) {
+    this.students = this.students.filter(currStudent => currStudent.id != student.id);
+  },
 }
 
 new Vue({
