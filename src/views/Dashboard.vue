@@ -1,6 +1,5 @@
 <template>
   <div class="dashboard">
-    <!-- <div class="sidebar-bg"/> -->
     <div class="sidebar d-flex flex-column align-items-start">
       <router-link class="links text-left w-100" to='/' exact>Home</router-link>
       <router-link class="links text-left w-100" to='/students'>Students</router-link>
@@ -40,17 +39,6 @@ export default {
   min-height: 100%;
 }
 
-.sidebar-bg {
-  background:  var(--primaryBlue);
-  position: absolute;
-  float: left;
-  display: block;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  width: 175px;
-}
-
 .sidebar {
   background:  var(--primaryBlue);
   width: 200px;
@@ -81,5 +69,11 @@ export default {
   border-top: 1px solid gray;
   font-size: .75em;
   align-items: flex-start;
+}
+
+@media only screen and (max-width: 700px) {
+  .sidebar {
+    width: 120px;
+  }
 }
 </style>
