@@ -1,21 +1,22 @@
 <template>
-  <div class="d-flex flex-row justify-content-between">
-    <div class="schedule-box d-flex flex-column">
+  <div class="d-flex schedule justify-content-between">
+    <div class="section calendar d-flex flex-column">
       <h3>{{days[schedule.dayOfWeek]}}</h3>
       <div v-for="index in times" :key="index">
-        <div class="time-slot d-flex flex-row">{{schedule[index].hour}}</div>
-        <div v-for="(item, index) in schedule[index].appointments" :key="index">
-          <div>{{item}}</div>
-        </div>
+        <HourCard :hourData="schedule[index]" />
       </div>
     </div>
-    <ScheduleAdd :hours="times" @add="(e) => addToSchedule(e)"/>
+    <div class="section add">
+      <h3>Add to Calendar</h3>
+      <ScheduleAdd :hours="times" @add="(e) => addToSchedule(e)"/>
+    </div>
   </div>
 </template>
 
 <script>
 import moment from 'moment'
 import ScheduleAdd from './ScheduleAdd'
+import HourCard from './HourCard'
 
 export default{
   name: 'Schedule',
@@ -30,7 +31,8 @@ export default{
     }
   },
   components: {
-    ScheduleAdd
+    ScheduleAdd,
+    HourCard
   },
   created() {
     this.schedule ={
@@ -40,29 +42,47 @@ export default{
     }
     for(let i=this.startTime; i <= this.endTime; i++) {
       this.times.push(i)
-      this.schedule[i] = {
+      this.$set(this.schedule, i, {
         label: i,
         hour: moment(i, 'HH').format('h a'),
         appointments: []
-      }
+      })
     }
   },
   methods: {
     addToSchedule(e) {
-      console.log(e)
-      this.schedule[e.hour].appointments.push(e)
+      this.$set(this.schedule[e.hour].appointments, this.schedule[e.hour].appointments.length, e)
     }
   }
 }
 </script>
 
 <style scoped>
-.schedule-box {
+.section {
   width: 45%;
 }
 
-.time-slot{
-  border: 1px solid red;
-  height: 75px;
+.schedule {
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 700px) {
+  .add {
+    margin-top: 20px;
+    order: 0
+  }
+
+  .calendar {
+    margin-top: 20px;
+    order: 1
+  }
+
+  .section {
+    width: 100%;
+  }
+
+  .schedule {
+    flex-direction: column;
+  }
 }
 </style>

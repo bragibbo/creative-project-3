@@ -1,12 +1,12 @@
 <template>
   <div class="home">
-    <h2>Home</h2>
+    <h1>Home</h1>
     <Schedule/>
   </div>
 </template>
 
 <script>
-import Schedule from '../Schedule.vue'
+import Schedule from '../Schedule/Schedule.vue'
 
 export default {
   name: 'Home',
