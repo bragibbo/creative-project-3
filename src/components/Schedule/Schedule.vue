@@ -3,11 +3,11 @@
     <div class="section calendar d-flex flex-column">
       <h3>{{days[schedule.dayOfWeek]}}</h3>
       <div v-for="index in times" :key="index">
-        <HourCard :hourData="schedule[index]" />
+        <HourCard :hourData="schedule[index]" @delete="(e) => deleteFromSchedule(e)" />
       </div>
     </div>
     <div class="section add">
-      <h3>Add to Calendar</h3>
+      <h3>Schedule a Time</h3>
       <ScheduleAdd :hours="times" @add="(e) => addToSchedule(e)"/>
     </div>
   </div>
@@ -52,6 +52,9 @@ export default{
   methods: {
     addToSchedule(e) {
       this.$set(this.schedule[e.hour].appointments, this.schedule[e.hour].appointments.length, e)
+    },
+    deleteFromSchedule(e) {
+      this.schedule[e.hour].appointments = this.schedule[e.hour].appointments.filter(item => item.firstName !== e.firstName && item.lastName !== e.lastName)
     }
   }
 }
