@@ -72,9 +72,7 @@ export default {
       border-bottom: 1px solid black;
       grid-template-columns: 2fr .25fr 3fr 1fr 1fr .75fr;
       grid-column-gap: 20px;
-            vertical-align: center;
-
-      
+      vertical-align: center;
     }
 
     .grid-item {
