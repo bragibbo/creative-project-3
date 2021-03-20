@@ -28,6 +28,7 @@ export default {
   data() {
     return {
       creating: true,
+      id: '',
       firstName: '',
       lastName: '',
       email: '',
@@ -72,6 +73,19 @@ export default {
     }
   },
   computed: {
+
+  },
+  created() {
+      const userID = this.$route.query.id;
+      const userOBJ = this.$root.$data.students.find(item => item.id === userID);
+      console.log(userOBJ);
+      this.id = userOBJ.id;
+      this.firstName = userOBJ.first_name;
+      this.lastName = userOBJ.last_name;
+      this.email = userOBJ.email;
+      this.billingPrice = userOBJ.billing_price;
+      this.gender = userOBJ.gender;
+      this.lessonLength = userOBJ.lesson_length;
 
   }
 }

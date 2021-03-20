@@ -20,6 +20,21 @@ let data = {
   remove(student) {
     this.students = this.students.filter(currStudent => currStudent.id != student.id);
   },
+  addStudent(firstName, lastName, studEmail, billPrice, studGender, lessonLength, studSince) {
+    this.students.push({
+      id: (this.getLastID() + 1),
+      first_name: firstName,
+      last_name: lastName,
+      email: studEmail,
+      billing_price: billPrice,
+      gender: studGender,
+      lesson_length: lessonLength,
+      student_since: studSince
+    })
+  },
+  getLastID() {
+    return this.students[(this.students.length) - 1].id;
+  }
 }
 
 new Vue({

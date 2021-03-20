@@ -37,6 +37,8 @@
       </div>
       <div class="grid-item remove">
         <button class="btn btn-outline-danger btn-sm" @click='removeStudent(student)'>Delete Student</button>
+        <button class="btn btn-outline-danger btn-sm" @click='editStudent(student)'>edit</button>
+
       </div>
     </div>
   </div>
@@ -52,6 +54,9 @@ export default {
   methods: {
     removeStudent(student) {
       this.$root.$data.remove(student);
+    },
+    editStudent(student) {
+      this.$router.push({name: "EditStudent", query: {id: student.id}});
     }
   }
 }

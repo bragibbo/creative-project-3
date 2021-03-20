@@ -1,7 +1,7 @@
 <template>
 <div class="page">
   <div>
-      <div class="page-title">Students</div>
+      <h1>Students</h1>
   </div>
   <div class="top-bar">
     <button class='btn btn-primary btn-sm' @click="$router.push('CreateStudent')">Add Student</button>
@@ -27,9 +27,7 @@ export default {
    }
   },
   methods: {
-    addStudent() {
 
-    }
   },
   computed: {
     studentData() {
