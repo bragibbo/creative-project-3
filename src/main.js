@@ -34,6 +34,20 @@ let data = {
       student_since: studSince
     })
   },
+  saveStudent(id, firstName, lastName, studEmail, billPrice, studGender, lessonLength) {
+    this.students.forEach(element => {
+      if (element.id === id) {
+        element.id = id;
+        element.first_name = firstName;
+        element.last_name = lastName;
+        element.email = studEmail;
+        element.billing_price = billPrice;
+        element.gender = studGender;
+        element.lesson_length = lessonLength;
+      }
+      
+    });
+  },
   getLastID() {
     return this.students[(this.students.length) - 1].id;
   }

@@ -18,6 +18,7 @@
   <div v-else>
     <p>Student successfully added!</p>
     <p><a @click="toggleForm" href="#">Add another student</a></p>
+        <button class='btn btn-primary' @click="$router.push('Students')">Return to Student View</button>
   </div>
 </div>
 </template>
@@ -40,7 +41,13 @@ export default {
   },
   methods: {
     toggleForm() {
-      this.creating = !this.creating;
+        this.firstName = '';
+        this.lastName = '';
+        this.email = '',
+        this.billingPrice = '',
+        this.gender = '',
+        this.lessonLength = '',
+        this.creating = !this.creating;
     },
     addStudent() {
         this.$root.$data.addStudent(this.firstName, this.lastName, this.email, 
@@ -67,6 +74,12 @@ export default {
             else if (price.includes('.') && (price.indexOf('.') != (price.length - 3))) {
                 price = price + "0";
             }
+            else if (price.length == 0) {
+                price = "--";
+            }
+        }
+        else if (price.length == 0) {
+            price = "--";
         }
         return price;
     }

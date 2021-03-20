@@ -1,7 +1,7 @@
 <template>
 <div class="page">
-  <h1>Add a Student</h1>
-  <form v-if="creating" @submit.prevent="addStudent">
+  <h1>Edit Student</h1>
+  <form v-if="creating" @submit.prevent="saveStudent">
     <input v-model="firstName" placeholder="First Name">
     <br>
     <input v-model="lastName" placeholder="Last Name">
@@ -13,13 +13,9 @@
     <v-select class='dropdown' v-model="gender" :options="genderOptions" placeholder="Gender"/>
     <v-select class='dropdown' v-model="lessonLength" :options="lessonLengthOptions" placeholder="Lesson Length"/>
 
-    <button class="submit-button" type="submit">Submit</button>
+    <button class="submit-button btn btn-outline-primary" type="submit">Save</button>
   </form>
-  <div v-else>
-    <p>Student successfully added!</p>
-    <p><a @click="toggleForm" href="#">Add another student</a></p>
   </div>
-</div>
 </template>
 
 <script>
@@ -43,10 +39,9 @@ export default {
     toggleForm() {
       this.creating = !this.creating;
     },
-    addStudent() {
-        this.$root.$data.addStudent(this.firstName, this.lastName, this.email, 
-                                    this.formatBillingPrice(), this.gender, this.lessonLength, this.today());
-        this.toggleForm();
+    saveStudent() {
+      this.$root.$data.saveStudent(this.id, this.firstName, this.lastName, this.email, this.billingPrice, this.gender, this.lessonLength);
+      this.$router.push("Students");
     },
     today() {
         var today = new Date();

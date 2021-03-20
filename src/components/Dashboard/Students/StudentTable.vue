@@ -36,8 +36,9 @@
         {{student.billing_price}}
       </div>
       <div class="grid-item remove">
-        <button class="btn btn-outline-danger btn-sm" @click='removeStudent(student)'>Delete Student</button>
-        <button class="btn btn-outline-danger btn-sm" @click='editStudent(student)'>edit</button>
+        <button class="btn btn-outline-primary btn-sm mr-2" @click='editStudent(student)'>edit</button>
+        <button class="btn btn-outline-danger btn-sm my-1" @click='removeStudent(student)'>Delete Student</button>
+
 
       </div>
     </div>
